@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>StudentManageApp</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Student Management MiniApp </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-3">
+    <h1>Student Management</h1>
+    <h2> MiniApp</h2>
+    <hr>
+    <h4>Add Student</h4>
+
+    <button class="btn btn-primary btn-sm show-form mt-2" onclick = "show();">
+        Show Form Add New Student
+    </button>
+  
+<div class="row pt-4">
+    <form class="col-sm-8 formulir">
+         <div class="form-row mb-3">
+             <div class="name">
+              <label for="inputStudentID" class="form-label">Student ID (NIM)</label>
+             </div>
+             <div class="value">
+                 <div class="input-group">
+                     <input  type="text" name="id" id="id" class="input--style-5" title = "Numeric Only!" pattern="\d{1,100}" required >
+                 </div>
+             </div>
+         </div>
+
+        <div class="form-row mb-3 ">
+            <div class="name">
+              <label for="inputFullName" class="form-label">Full Name</label>
+            </div>
+            <div class="value">
+                <div class="input-group">
+                    <input type="text" name="name" id="name" class="input--style-5" title = "Alphabet Only!" pattern="[A-Za-z]{1,100}" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row  mb-1">
+            <div class="name">
+              <label for="inputGender" class="form-label">Gender</label>
+            </div>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">Female</label>
+        </div>
+
+        <p style="word-spacing:2em;"></p>
+
+        <div class="form-row">
+            <div class="name">
+                Faculty</div>
+            <p style="word-spacing:2em;"></p>
+            <div class="value">
+                <div class="input-group">
+                    <div class="rs-select2 select--no-search">
+                        <select name="subject" id="fakultas" class="subject custom-select">
+                            <option value="Faculty">--SELECT FACULTY--</option>
+                            <option value="Pascasarjana">Pascasarjana</option>
+                            <option value="Filsafat">Fakultas Filsafat</option>
+                            <option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                            <option value="FEB">Fakultas Ekonomi dan Bisnis</option>
+                            <option value="Pertanian">Fakultas Pertanian</option>
+                            <option value="FIK">Fakultas Ilmu Komputer</option>
+                            <option value="Keperawatan">Fakultas Keperawatan</option>
+                            <option value="ASMI">Akademi Sekretari Manajemen Indonesia Klabat</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br>
+        <div class="form-row">
+            <div class="name">
+                Program  Of Study</div>
+            <p style="word-spacing:2em;"></p>
+            <div class="value">
+                <div class="input-group">
+                    <div class="rs-select2 select--no-search">
+                        <select name="subject" id="prodi" class="subject custom-select">
+                            <option data-option="Select" value="ProgramStudy">--SELECT PROGRAM OF STUDY--</option>
+                            <option data-option="Pascasarjana" value="Magister Manajemen">Magister Manajemen</option>
+                            <option data-option="Pascasarjana" value="Magister Filsafat">Magister Filsafat</option>
+                            <option data-option="Filsafat" value="Filsafat">Filsafat Agama Kristen Advent</option>
+                            <option data-option="FKIP" value="Pendidikan Agama">Pendidikan Agama</option>
+                            <option data-option="FKIP" value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+                            <option data-option="FKIP" value="Pendidikan Ekonomi">Pendidikan Ekonomi</option>
+                            <option data-option="FKIP" value="Pendidikan Guru Luar Sekolah">Pendidikan Guru Luar Sekolah</option>
+                            <option data-option="FEB" value="Manajemen">Manajemen</option>
+                            <option data-option="FEB" value="Akuntansi">Akuntansi</option>
+                            <option data-option="Pertanian" value="Agronomi">Agronomi</option>
+                            <option data-option="FIK" value="Informatika">Informatika</option>
+                            <option data-option="FIK" value="Sistem Informasi">Sistem Informasi</option>
+                            <option data-option="Keperawatan" value="Ners">Ners</option>
+                            <option data-option="ASMI" value="Sekretaris">Sekretaris</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <br>
+          <button class="btn btn-primary btn-succes ">Add Student</button>
+    </form>
+  </div>  
+<br>
+ 
+  <div class="col-6">
+    <div class="form-row">
+        <div class="value">
+            <div class="input-group">
+                <div class="rs-select2 select--no-search">
+                    <label class = "name" for="filterFakulty">Faculty</label><br><br>
+                    <select name="subject" id="filterFakulty" class="subject custom-select">
+                      <option value="Faculty">--SELECT FACULTY--</option>
+                      <option value="Pascasarjana">Pascasarjana</option>
+                      <option value="Filsafat">Fakultas Filsafat</option>
+                      <option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                      <option value="FEB">Fakultas Ekonomi dan Bisnis</option>
+                      <option value="Pertanian">Fakultas Pertanian</option>
+                      <option value="FIK">Fakultas Ilmu Komputer</option>
+                      <option value="Keperawatan">Fakultas Keperawatan</option>
+                      <option value="ASMI">Akademi Sekretari Manajemen Indonesia Klabat</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+        </div>
+        <button class="btn btn-primary" onclick="filterFakulty();">Show Student</button>
+      
+    </div>
+<br>
+    <div class="form-row">
+        <div class="value">
+            <div class="input-group">
+                <div class="rs-select2 select--no-search">
+                    <label class = "name" for="filterProdi">Program Of Study</label><br><br>
+                    <select name="subject" id="filterProdi" class="subject custom-select">
+                      <option value="ProgramStudy">--SELECT PROGRAM OF STUDY--</option>
+                      <option value="Magister Manajemen">Magister Manajemen</option>
+                      <option value="Magister Filsafat">Magister Filsafat</option>
+                      <option value="Filsafat">Filsafat Agama Kristen Advent</option>
+                      <option value="Pendidikan Agama">Pendidikan Agama</option>
+                      <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+                      <option value="Pendidikan Ekonomi">Pendidikan Ekonomi</option>
+                      <option value="Pendidikan Guru Luar Sekolah">Pendidikan Guru Luar Sekolah</option>
+                      <option value="Manajemen">Manajemen</option>
+                      <option value="Akuntansi">Akuntansi</option>
+                      <option value="Agronomi">Agronomi</option>
+                      <option value="Informatika">Informatika</option>
+                      <option value="Sistem Informasi">Sistem Informasi</option>
+                      <option value="Ners">Ners</option>
+                      <option value="Sekretaris">Sekretaris</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+       <br> <button class="btn btn-primary" onclick="filterProdi();">Show Student</button>
+    </div>
+   </div>
+</div>
+<hr>
+ 
+<div class="container-fluid container-fluid2">
+  <h1>
+    <p class="text-center">Our Student</p>
+  </h1>
+    <input type="text" name="search" onkeyup="searchname();" id="kotak-pencarian" class="form-control mb-3 container mb-2 mt-2 bg-light" placeholder="Search student by name..">
+    <table class="table container">
+        <thead>
+            <th>Student ID (NIM)</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Faculty</th>
+            <th>Program of Study</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+
+<footer class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <h5 class="text-center">Made with</h5><i class="fab fa-bootstrap"></i> <i class="fab fa-js-square"></i> <i class="fab fa-font-awesome"></i>
+  </footer>
+  <script src="file.js"></script>
+</body>
+</html>
